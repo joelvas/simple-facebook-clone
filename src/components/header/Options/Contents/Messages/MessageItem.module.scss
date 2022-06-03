@@ -1,0 +1,60 @@
+@import 'src/sass/index';
+
+.message-item {
+  padding: 0.3rem 0.5rem;
+  border-radius: 7px;
+  @include flex(row, nowrap, center, center);
+  cursor: pointer;
+  &:hover {
+    background-color: map-get($bgColors, 'web-wash');
+  }
+  &__profile {
+    & div {
+      width: 56px;
+      height: 56px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+  }
+  &__content {
+    @include flex(column, nowrap, center);
+    flex: 1;
+    padding: 0 0.7rem;
+    &__name {
+      font-size: 1rem;
+    }
+    &__message {
+      @include flex(row);
+      color: map-get($textColors, 'secondary');
+      & p {
+        @include grid-center();
+        font-size: 0.9rem;
+        &.pending {
+          color: map-get($blues, 'accent');
+        }
+      }
+      & span {
+        @include grid-center();
+        font-size: 0.5rem;
+        padding: 0 0.3rem;
+        position: relative;
+        top: 0.05rem;
+      }
+      & .time {
+        @include grid-center();
+        font-size: 0.7rem;
+        position: relative;
+        top: 0.05rem;
+      }
+    }
+  }
+  &__read {
+    @include flex-center();
+    color: transparent;
+    &.opened {
+      font-size: 3rem;
+      color: map-get($blues, 'accent');
+    }
+  }
+}

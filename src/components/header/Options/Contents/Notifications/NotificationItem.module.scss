@@ -1,0 +1,75 @@
+@import 'src/sass/index';
+
+.notification-item {
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  border-radius: 7px;
+  @include flex(row, nowrap, center, center);
+  &:hover {
+    background-color: map-get($bgColors, 'web-wash');
+  }
+  & .content {
+    flex: 1;
+    @include flex(row, nowrap, center, stretch);
+    gap: 0.2rem;
+    &__picture {
+      @include flex(row, nowrap, left, flex-start);
+      position: relative;
+      & img {
+        border-radius: 50%;
+      }
+      & div {
+        position: absolute;
+        transform: translate(120%,110%);
+        height: 28px;
+        width: 28px;
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v4/y5/0WudJbeIJ5t.png');
+        &.groups {
+          background-position: 0 -899px;
+        }
+        &.pages {
+          background-position: 0 -203px;
+        }
+        &.videos {
+          background-position: 0 -1740px;
+        }
+        &.comments {
+          background-position: 0 -725px;
+        }
+        &.events {
+          background-position: 0 -551px;
+        }
+        &.alerts {
+          background-position: 0 -406px;
+        }
+      }
+    }
+    &__body {
+      @include flex(column, nowrap, center, flex-start);
+      padding: 0 0.5rem;
+      &__text {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        &.opened {
+          color: map-get($textColors, 'secondary');
+        }
+      }
+      &__footer {
+        font-size: 0.9rem;
+        color: map-get($blues, 'accent');
+        line-height: 1.3rem;
+        &.opened {
+          color: map-get($textColors, 'secondary');
+        }
+      }
+    }
+  }
+  & .read {
+    @include grid-center();
+    font-size: 3rem;
+    color: map-get($blues, 'accent');
+    &.opened {
+      color: transparent;
+    }
+  }
+}

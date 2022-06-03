@@ -1,0 +1,10 @@
+@import 'src/sass/index';
+
+.messages-header {
+  @include flex(row, nowrap, space-between);
+  padding: 0.65rem .5rem 0 1rem;
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}

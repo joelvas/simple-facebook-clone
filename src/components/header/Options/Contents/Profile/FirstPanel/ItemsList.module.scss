@@ -1,0 +1,57 @@
+@import 'src/sass/index';
+.items-list {
+  &__item {
+    @include flex(row, nowrap, initial, center, 0.7rem);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 7px;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    &__picture {
+      background-color: map-get($bgColors, 'grey-hover');
+      padding: 0.5rem;
+      border-radius: 50%;
+      div {
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        &.settings {
+          background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yW/r/xmXSstLM6Qn.png?_nc_eui2=AeFslRTfGtoPFaWDaLc9mbgSBciPTHJBv6gFyI9MckG_qEIHE4no7JGE3fzmhAK10ttnrRbXnb2zTI0IXpc5Me33');
+          background-position: -21px -261px;
+        }
+        &.support {
+          background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yp/r/9r-TsLYr3SA.png?_nc_eui2=AeHZglAc-rhrnGncJtTqr0nNfnA2_sQDfEN-cDb-xAN8Q5pWZ3KNZfMfRUG90UGR2SRhhPcVwgN4SeCgRQSJ0501');
+          background-position: 0px -109px;
+        }
+        &.display {
+          background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yu/r/wxr2nr9cnJt.png?_nc_eui2=AeG6QHOYU2dT1TMpsORGPrgV5tA9DTsz5GDm0D0NOzPkYFTq1tVWaBNULxneBfUxdjTycv0Ia1bvN83ndGOnJay2');
+          background-position: 0px -214px;
+        }
+        &.feedback {
+          background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yi/r/QnBF2xVFFiX.png?_nc_eui2=AeETNDog5xTDy93RQPWpUqgm054kQUGt3M_TniRBQa3cz5UtsJRioJERcfk4RkuIIdLZe4G1F_L9xLcr11migbP2');
+          background-position: 0px -25px;
+        }
+        &.logout {
+          background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yi/r/QnBF2xVFFiX.png?_nc_eui2=AeETNDog5xTDy93RQPWpUqgm054kQUGt3M_TniRBQa3cz5UtsJRioJERcfk4RkuIIdLZe4G1F_L9xLcr11migbP2');
+          background-position: 0px -46px;
+        }
+      }
+    }
+    &__text {
+      flex-grow: 1;
+    }
+    &__icon {
+      & > div {
+        filter: invert(0.4);
+        width: 24px;
+        height: 24px;
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/y8/r/Rfiw-jRRbM1.png?_nc_eui2=AeGOJUEcTYi0uMCS3pep6rrCpWbRFdd_ZMelZtEV139kxwGnNaySGabN8DEQ6Bs2_0Pz7_3uBAI8FtcLNi5pFbz9');
+        background-position: -108px -13px;
+      }
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import 'src/sass/index';
+.messages-menu-list {
+  @include flex(row, nowrap, space-between, center, 0.55rem);
+  padding: 0 0.55rem;
+  & li {
+    padding: 0.35rem;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    & div {
+      background-size: auto;
+      background-repeat: no-repeat;
+      filter: invert(0.4);
+      &.options-menu {
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yG/r/AIv5-9MmZfT.png?_nc_eui2=AeHS1zoYvrNcRe1Bj1_FSG7QBA1vcApbg0sEDW9wCluDSyobLJbrJCk5tZXid7jTBhCZMPlYSz7nkck2cbmvb9oR');
+        width: 20px;
+        height: 20px;
+        background-position: -126px -67px;
+      }
+      &.full-view {
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yx/r/8ANL4QaSOqC.png?_nc_eui2=AeFMLwjMAyyDU_OBQnpSLwXIA1xm2vUPwf0DXGba9Q_B_enT66xvcHFtIGJ5n8Mb1M8bwuwxVsQ9PzIQDb2cAfOL');
+        width: 20px;
+        height: 20px;
+        background-position: 0px -799px;
+      }
+      &.create-room {
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yQ/r/oDOn_nqh21l.png?_nc_eui2=AeEP3mwbEX5fgCcLdslUPY1WokwbwbasgTyiTBvBtqyBPMFrU6qqfymi8ZUq2iLFabTc5sdN2okfbyLaIMHdH0xP');
+        width: 20px;
+        height: 20px;
+        background-position: 0px -409px;
+      }
+      &.new-message {
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yQ/r/oDOn_nqh21l.png?_nc_eui2=AeEP3mwbEX5fgCcLdslUPY1WokwbwbasgTyiTBvBtqyBPMFrU6qqfymi8ZUq2iLFabTc5sdN2okfbyLaIMHdH0xP');
+        width: 20px;
+        height: 20px;
+        background-position: 2px -1391px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import 'src/sass/index';
+.home-page {
+  @include flex(row, nowrap, initial, stretch);
+  width: 100%;
+  position: relative;
+  min-height: calc(100vh - $header-height);
+  &__left-panel {
+    position: sticky;
+    top: $header-height;
+    width: 30%;
+    max-width: 270px;
+    height: calc(100vh - $header-height);
+    @include medium-home() {
+      display: none;
+    }
+  }
+  &__right-panel {
+    position: sticky;
+    top: $header-height;
+    width: 30%;
+    max-width: 300px;
+    min-width: 280px;
+    height: calc(100vh - $header-height);
+    @include small-home() {
+      display: none;
+    }
+  }
+  &__main-panel {
+    flex-grow: 1;
+  }
+}

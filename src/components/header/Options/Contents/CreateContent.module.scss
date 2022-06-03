@@ -1,0 +1,20 @@
+@import 'src/sass/index';
+
+.create-content {
+  padding: 0.5rem;
+  @include flex(column);
+  &__title {
+    padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  &__first-list {
+    @include flex(column);
+  }
+  & .divide {
+    @include divide();
+  }
+  &__second-list {
+    @include flex(column);
+  }
+}

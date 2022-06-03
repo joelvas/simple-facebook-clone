@@ -1,0 +1,42 @@
+@import 'src/sass/index';
+.option-content {
+  display: none;
+  position: absolute;
+  width: 360px;
+  box-shadow: 1px 1px 3px 1px rgba(190, 190, 190, 0.4);
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  max-height: calc(100vh - $header-height - 16px);
+  overflow-y: auto;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+  &:hover {
+    scrollbar-color: map-get($bgColors, 'grey-hover') transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+    &-track {
+      background-color: inherit;
+    }
+    &-thumb {
+      border-radius: 100px;
+      border: 6px solid transparent;
+      border-left: 0;
+      border-right: 0;
+      background-color: map-get($bgColors, 'grey-hover');
+      &:hover {
+        background-color: var(--border-color);
+      }
+    }
+  }
+  &.active {
+    display: flex;
+    flex-flow: column;
+    top: calc($header-height - 0.6rem);
+    right: 0;
+    @include larger() {
+      top: calc($header-height - 0.1rem);
+      right: 1rem;
+    }
+  }
+}

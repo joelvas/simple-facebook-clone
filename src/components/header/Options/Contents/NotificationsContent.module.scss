@@ -1,0 +1,22 @@
+@import 'src/sass/index';
+.notifications-content {
+  @include flex(column, nowrap, initial, initial, 0.5rem);
+  padding: 0.6rem 0.5rem;
+  &__subheader {
+    padding: 0 0.5rem;
+    @include flex(row, nowrap, left, center, 0.5rem);
+    & span {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background-color 0.2s, color 0.2s;
+      &:hover {
+        background-color: map-get($bgColors, 'web-wash');
+      }
+      &.active {
+        color: map-get($blues, 'primary');
+        background-color: map-get($blues, 'bg');
+      }
+    }
+  }
+}

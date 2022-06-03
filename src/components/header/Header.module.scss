@@ -1,0 +1,10 @@
+@import 'src/sass/index';
+.header {
+  background-color: map-get($bgColors, 'white');
+  height: $header-height;
+  @include header-card();
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}

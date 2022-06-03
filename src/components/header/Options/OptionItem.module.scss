@@ -1,0 +1,47 @@
+@import 'src/sass/index';
+.li {
+  background-color: map-get($bgColors, 'image-icon');
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  &:hover {
+    background-color: map-get($bgColors, 'grey-hover');
+  }
+  &.active {
+    color: map-get($blues, 'accent');
+    background-color: map-get($blues, 'bg');
+    transition: color 0.2s, background-color 0.2s;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+  &.hidden-xs {
+    @include smaller() {
+      display: none;
+    }
+  }
+  &.hidden-sm {
+    @include small() {
+      display: none;
+    }
+  }
+  &.hidden-md {
+    @include medium() {
+      display: none;
+    }
+  }
+  &.hidden-lg {
+    @include large() {
+      display: none;
+    }
+  }
+  &.hidden-xl {
+    @include larger() {
+      display: none;
+    }
+  }
+}

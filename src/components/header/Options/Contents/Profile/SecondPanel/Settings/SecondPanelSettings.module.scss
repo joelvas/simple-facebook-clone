@@ -1,0 +1,6 @@
+@import 'src/sass/index';
+.settings {
+  &__content {
+    @include flex(column);
+  }
+}

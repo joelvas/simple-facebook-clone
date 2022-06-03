@@ -1,0 +1,25 @@
+@import 'src/sass/index';
+
+.display-item {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 7px;
+  &__header {
+    @include flex(row, nowrap, initial, center, 0.7rem);
+    &__picture {
+      margin-bottom: auto;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    &__body {
+      &__title {
+        font-size: 1.05rem;
+        font-weight: bold;
+      }
+      &__description {
+        font-size: 0.95rem;
+        color: map-get($textColors, 'secondary');
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import 'src/sass/index';
+.search-bar {
+  @include flex(column, nowrap, space-between, center, 1rem);
+  & .search-entry {
+    @include flex(row, nowrap, space-between, center, 0.5rem);
+    & .back-arrow-icon {
+      display: none;
+    }
+  }
+  &.active {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    padding: 0.5rem;
+    background-color: white;
+    @include smaller() {
+      padding-top: 1rem;
+      width: 100%;
+    }
+    @include flex(column, nowrap, center, stretch, 0);
+    @include shadow();
+    & .search-entry {
+      & .back-arrow-icon {
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        color: map-get($textColors, 'secondary');
+        padding: 0.5rem;
+        border-radius: 50%;
+        &:hover {
+          background-color: map-get($bgColors, 'web-wash');
+        }
+        &:active {
+          background-color: map-get($bgColors, 'grey-hover');
+        }
+      }
+    }
+  }
+}

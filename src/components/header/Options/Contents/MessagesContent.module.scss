@@ -1,0 +1,18 @@
+@import 'src/sass/index';
+
+.messages-content {
+  @include flex(column);
+  &__footer {
+    position: sticky;
+    cursor: pointer;
+    bottom: 0;
+    padding: 0.5rem;
+    @include flex-center();
+    width: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 0px 1px grey;
+    color: map-get($blues, 'accent');
+    font-weight: bold;
+  }
+}

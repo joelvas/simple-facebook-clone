@@ -1,0 +1,8 @@
+@import 'src/sass/index';
+.options {
+  position: absolute;
+  right: 1rem;
+  @include larger() {
+    position: initial;
+  }
+}

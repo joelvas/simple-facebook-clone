@@ -1,0 +1,13 @@
+@import 'src/sass/index';
+.navbar-menu {
+  @include flex(row, nowrap, space-between, center, 1rem);
+  position: absolute;
+  left: 25%;
+  width: 45%;
+  @include smaller() {
+    width: auto;
+    position: initial;
+    padding-left: 1.4rem ;
+    margin-right: auto;
+  }
+}

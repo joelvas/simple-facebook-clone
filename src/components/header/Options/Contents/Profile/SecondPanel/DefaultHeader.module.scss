@@ -1,0 +1,21 @@
+@import 'src/sass/index';
+.header {
+  @include flex(row, nowrap, initial, center, 0.5rem);
+  padding: 0.4rem .5rem .8rem .5rem;
+  &__picture {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    div {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}

@@ -1,0 +1,47 @@
+@import 'src/sass/index';
+.navbar {
+  @include flex(row, nowrap, space-between, center, 0);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0 1rem;
+  &-ls {
+    @include flex(row, nowrap, space-between, center, 0.5rem);
+    &__logo {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  &-profile {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    display: none;
+    border-radius: 20px;
+    padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+    color: black;
+    &.active {
+      color: black;
+      color: map-get($blues, 'accent');
+      background-color: map-get($blues, 'bg');
+      &:hover {
+        background-color: map-get($blues, 'bg');
+      }
+    }
+    & img {
+      border: 1px solid rgba(27, 27, 27, 0.35);
+      border-radius: 50%;
+    }
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    & span {
+      @include flex();
+    }
+    @include larger() {
+      @include flex();
+      gap: 0.5rem;
+    }
+  }
+}

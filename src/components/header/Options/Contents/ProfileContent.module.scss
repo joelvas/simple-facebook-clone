@@ -1,0 +1,32 @@
+@import 'src/sass/index';
+.profile-content {
+  overflow: hidden;
+  &__panels {
+    @include flex();
+    width: 200%;
+    transition: transform 0.3s, max-height 1s;
+    &.first {
+      transform: translate(0, 0);
+    }
+    &.second {
+      transform: translate(-50%, 0);
+    }
+    & > div {
+      padding: 0.5rem;
+    }
+    &__first-panel {
+      width: 50%;
+      max-height: 100%;
+      &.disabled {
+        max-height: 1px;
+      }
+    }
+    &__second-panel {
+      width: 50%;
+      max-height: 100%;
+      &.disabled {
+        max-height: 1px;
+      }
+    }
+  }
+}

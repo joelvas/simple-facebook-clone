@@ -1,0 +1,19 @@
+@import 'src/sass/index';
+.shortcut-item {
+  cursor: pointer;
+  @include flex(row, nowrap, initial, center, 0.5rem);
+  padding: 0.5rem;
+  border-radius: 7px;
+  &:hover {
+    background-color: map-get($bgColors, 'image-icon');
+  }
+  &__picture{
+    & div{
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &__text{
+  }
+}

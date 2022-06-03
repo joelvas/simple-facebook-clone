@@ -1,0 +1,6 @@
+@import 'src/sass/index';
+
+.messages-list {
+  @include flex(column);
+  padding: 0 .5rem;
+}

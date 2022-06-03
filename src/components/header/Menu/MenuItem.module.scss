@@ -1,0 +1,57 @@
+@import 'src/sass/index';
+.li {
+  width: 100%;
+  & .a {
+    height: $header-height;
+    @include grid-center();
+    cursor: pointer;
+    color: map-get($textColors, 'secondary');
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    width: 100%;
+    & .icon {
+      @include grid-center();
+      width: 100%;
+      height: 3rem;
+      border-radius: 10px;
+      padding: 0.2rem;
+      &:hover {
+        background-color: map-get($bgColors, 'web-wash');
+      }
+    }
+    &.active {
+      border-bottom: 3px solid map-get($blues, 'accent');
+      color: map-get($blues, 'accent');
+      & .icon {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  &.hidden-xs {
+    @include smaller() {
+      display: none;
+    }
+  }
+  &.hidden-sm {
+    @include small() {
+      display: none;
+    }
+  }
+  &.hidden-md {
+    @include medium() {
+      display: none;
+    }
+  }
+  &.hidden-lg {
+    @include large() {
+      display: none;
+    }
+  }
+  &.hidden-xl {
+    @include larger() {
+      display: none;
+    }
+  }
+}

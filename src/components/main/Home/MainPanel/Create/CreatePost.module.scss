@@ -1,0 +1,70 @@
+@import 'src/sass/index';
+.create-post {
+  @include flex(column, nowrap, initial, initial, 0.3rem);
+  background-color: white;
+  max-width: 500px;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 7px;
+  @include card();
+  &__header {
+    @include flex(row, nowrap, initial, center, 1rem);
+    padding: 0 0.5rem;
+    &__profile {
+      & img {
+        border-radius: 50%;
+      }
+    }
+    &__write {
+      cursor: pointer;
+      flex: 1;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      background-color: map-get($bgColors, 'web-wash');
+      border-radius: 20px;
+      color: map-get($textColors, 'secondary');
+    }
+  }
+  &__divide {
+    @include divide();
+  }
+  &__body {
+    @include flex(row, nowrap, flex-start, initial);
+    padding: 0 1rem;
+    @include smaller() {
+      padding: 0;
+    }
+    &__item {
+      cursor: pointer;
+      flex: 1;
+      @include flex(row, nowrap, center, center, 0.5rem);
+      border-radius: 7px;
+      padding: 0.5rem;
+      &:nth-child(3) {
+        @include smaller() {
+          display: none;
+        }
+      }
+      &:hover {
+        background-color: map-get($bgColors, 'grey-light');
+      }
+      & div {
+        @include grid-center();
+        font-size: 24px;
+      }
+      & span {
+        color: map-get($textColors, 'secondary');
+        font-size: 1rem;
+      }
+      & .live-icon {
+        color: #f3425f;
+      }
+      & .photo-icon {
+        color: #45bd62;
+      }
+      & .feeling-icon {
+        color: #f7b927;
+      }
+    }
+  }
+}

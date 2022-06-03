@@ -1,0 +1,20 @@
+@import 'src/sass/index';
+.notifications-header {
+  padding: 0 0.5rem;
+  @include flex(row, nowrap, space-between, center);
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  &__options {
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    border-radius: 50%;
+    color: map-get($textColors, 'secondary');
+    @include grid-center();
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+  }
+}

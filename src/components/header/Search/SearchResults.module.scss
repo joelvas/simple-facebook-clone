@@ -1,0 +1,8 @@
+@import 'src/sass/index';
+.search-results {
+  display: none;
+  &.active {
+    @include flex(column);
+    padding: 0 0.5rem;
+  }
+}

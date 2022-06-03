@@ -1,0 +1,50 @@
+@import 'src/sass/index';
+.search-input {
+  @include grid-center();
+  background-color: map-get($bgColors, 'web-wash');
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-sizing: content-box;
+  color: map-get($textColors, 'secondary');
+  & input {
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+    @include larger() {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      font-size: 1rem;
+      padding-bottom: 0.2rem;
+      color: map-get($textColors, 'secondary');
+    }
+  }
+  @include larger() {
+    @include flex(row, nowrap, left, center, 0.5rem);
+    width: 14rem;
+    border-radius: 25px;
+    padding-left: 0.75rem;
+  }
+  &.active {
+    width: 100%;
+    border-radius: 25px;
+    padding: 0 0.5rem;
+    & .fb-search-icon {
+      display: none;
+    }
+    & input {
+      @include flex();
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 0.5rem;
+      font-size: 1rem;
+      padding-bottom: 0.2rem;
+      color: map-get($textColors, 'secondary');
+    }
+  }
+}

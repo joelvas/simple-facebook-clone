@@ -1,0 +1,44 @@
+@import 'src/sass/index';
+
+.contact-item {
+  @include flex(row, nowrap, initial, center, 0.7rem);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 7px;
+  &:hover {
+    background-color: map-get($bgColors, 'grey-hover');
+  }
+  &__picture {
+    position: relative;
+    @include flex-center();
+    &__status {
+      display: none;
+      position: absolute;
+      border-radius: 50%;
+      bottom: 0;
+      right: 0;
+      width: 9px;
+      height: 9px;
+      font-size: 1.5rem;
+      color: transparent;
+      background-color: white;
+
+      &.online {
+        @include grid-center();
+      }
+      & div {
+        height: 6px;
+        width: 6px;
+        background-color: transparent;
+        border-radius: 50%;
+        background-color: #31a24c;
+      }
+    }
+    & img {
+      border-radius: 50%;
+    }
+  }
+  &__name {
+    flex-grow: 1;
+  }
+}

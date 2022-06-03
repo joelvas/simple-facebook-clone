@@ -1,0 +1,39 @@
+@import 'src/sass/index';
+.shortcuts {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  &__title {
+    color: map-get($textColors, 'secondary');
+    font-size: 1.1rem;
+    font-weight: 800;
+    &.hidden {
+      display: none;
+    }
+  }
+  &__options {
+    cursor: pointer;
+    @include flex(row, nowrap, initial, center, 0.5rem);
+    padding: 0.5rem;
+    border-radius: 7px;
+    &.hidden {
+      display: none;
+    }
+    &:hover {
+      background-color: map-get($bgColors, 'image-icon');
+    }
+    & span {
+      &.hidden {
+        display: none;
+      }
+    }
+    & div {
+      transition: transform 0.2s ease-in-out;
+      &.rotate {
+        transform: rotate(180deg);
+      }
+      @include grid-center();
+      background-color: map-get($bgColors, 'grey-hover');
+      padding: 0.35rem;
+      border-radius: 50%;
+    }
+  }
+}

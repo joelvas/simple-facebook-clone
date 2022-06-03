@@ -1,0 +1,75 @@
+@import 'src/sass/index';
+
+.create-room {
+  @include flex(row, nowrap, initial, center, 1rem);
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  @include smaller() {
+    width: 100vw;
+  }
+  border-radius: 7px;
+  position: relative;
+  @include card();
+  padding: 0.7rem 0 0.7rem 1rem;
+  &__create {
+    cursor: pointer;
+    @include flex(row, nowrap, center, center, 0.5rem);
+    padding: 0.4rem 1rem;
+    border: 2px solid map-get($blues, 'bg');
+    border-radius: 20px;
+    min-width: 160px;
+    width: 40%;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    &__icon {
+      @include grid-center();
+      & div {
+        background-image: url('https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/ym/r/5zaboDASSye.png?_nc_eui2=AeEJyornipTRw2c5-QrF4eJWxvqOeXHr-yfG-o55cev7JzqEGW-GPz1lBDFJxjtUnNyaX3EODI5oRufZzYoYc6vz');
+        background-position: 0 -219px;
+        background-size: auto;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+      }
+    }
+    &__text {
+      color: map-get($blues, 'accent');
+      & span {
+        @include smaller() {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+  &__contacts {
+    @include flex(column, nowrap, center, center);
+    &__list {
+      @include flex(row, nowrap, center, center, 1rem);
+      max-width: max-content;
+      & img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid rgb(196, 196, 196);
+        border-radius: 50%;
+      }
+    }
+  }
+  &__rooms-button {
+    @include grid-center();
+    cursor: pointer;
+    &:hover {
+      background-color: map-get($bgColors, 'web-wash');
+    }
+    right: 20px;
+    position: absolute;
+    background-color: white;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    color: map-get($textColors, 'secondary');
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 50%;
+  }
+}

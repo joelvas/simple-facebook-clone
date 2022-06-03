@@ -1,0 +1,17 @@
+@import 'src/sass/index';
+.contact-options {
+  &__list {
+    @include flex(row, wrap, initial, center, 1rem);
+    &-item {
+      & div {
+        @include grid-center();
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: map-get($textColors, 'secondary');
+        &:hover {
+          background-color: map-get($bgColors, 'grey-hover');
+        }
+      }
+    }
+  }
+}
