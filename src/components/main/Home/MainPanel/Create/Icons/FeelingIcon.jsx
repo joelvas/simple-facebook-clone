@@ -15,7 +15,7 @@ const FeelingIcon = () => {
             transform="translate(353.5 156.5)"
           ></path>
           <path
-            fill-rule="nonzero"
+            fillRule="nonzero"
             d="M114.024 11.5c0 6.351-5.149 11.5-11.5 11.5s-11.5-5.149-11.5-11.5S96.173 0 102.524 0s11.5 5.149 11.5 11.5zm-2 0a9.5 9.5 0 1 0-19 0 9.5 9.5 0 0 0 19 0z"
             transform="translate(353.5 156.5)"
           ></path>
