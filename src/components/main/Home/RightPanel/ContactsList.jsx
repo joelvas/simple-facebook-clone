@@ -5,7 +5,7 @@ const ContactsList = ({ contactsList }) => {
   return (
     <div className={classes['contacts-list']}>
       {contactsList.map((contact) => {
-        return <ContactItem key={contact.id} contact={contact} />
+        return <ContactItem key={contact.uid} contact={contact} />
       })}
     </div>
   )

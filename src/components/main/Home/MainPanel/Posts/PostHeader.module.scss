@@ -1,0 +1,70 @@
+@import 'src/sass/index';
+.post-header {
+  @include flex(row, nowrap, initial, top);
+  padding: 0.8rem 1rem 0 1rem;
+  &__picture {
+    position: relative;
+    margin-top: 0.1rem;
+    & img:nth-child(1) {
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    & img:nth-child(2) {
+      cursor: pointer;
+      border-radius: 50%;
+      position: absolute;
+      border: 1px solid #fff;
+      right: -3px;
+      bottom: 0;
+    }
+  }
+  &__info {
+    @include flex(column, nowrap, initial, initial, 0.1rem);
+    padding: 0 0.7rem;
+    flex-grow: 1;
+    &__title {
+      &__name {
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline solid #000;
+        }
+      }
+    }
+    &__subtitle {
+      @include flex(row, nowrap, initial, center, 0.25rem);
+      font-size: 0.8125rem;
+      color: map-get($textColors, 'secondary');
+      &__owner {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline solid;
+        }
+      }
+      &__date {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline solid;
+        }
+      }
+      &__privacy {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+  &__options {
+    color: map-get($textColors, 'secondary');
+    &__icon {
+      @include grid-center();
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      &:hover {
+        background-color: map-get($bgColors, 'grey-light');
+      }
+    }
+  }
+}

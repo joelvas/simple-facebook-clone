@@ -7,9 +7,7 @@ const MessageItem = ({ message }) => {
         <div
           style={{
             backgroundImage:
-              'url(https://ui-avatars.com/api/?background=random&name=' +
-              message.name +
-              ')'
+              'url('+message.picture+')'
           }}
         ></div>
       </div>

@@ -1,0 +1,23 @@
+@import 'src/sass/index';
+.footer-actions {
+  @include flex();
+  padding: 0.25rem 0rem;
+  &__action {
+    cursor: pointer;
+    flex-grow: 1;
+    padding: 0.35rem 0;
+    border-radius: 5px;
+    @include flex(row, nowrap, center, center, 0.4rem);
+    &:hover {
+      background-color: map-get($bgColors, 'grey-light');
+    }
+    &__icon {
+      color: map-get($textColors, 'secondary');
+      filter: invert(0.4);
+    }
+    &__text {
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+  }
+}

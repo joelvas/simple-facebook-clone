@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from './MessagesContent.module.scss'
 import MessagesHeader from './Messages/MessagesHeader'
 import MessagesList from './Messages/MessagesList'
 import MessagesSearchBar from './Messages/MessagesSearchBar'
+import { useSelector } from 'react-redux'
+let first = true
 const MessagesContent = () => {
   const [messages, setMessages] = useState([
     {
@@ -11,8 +13,7 @@ const MessagesContent = () => {
       message: 'Hola, como estas?',
       time: '13:53',
       read: false,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Juan'
     },
     {
       id: 'm2',
@@ -20,8 +21,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm3',
@@ -29,8 +29,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm4',
@@ -38,8 +37,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm5',
@@ -47,8 +45,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm6',
@@ -56,8 +53,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm7',
@@ -65,8 +61,7 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     },
     {
       id: 'm8',
@@ -74,10 +69,19 @@ const MessagesContent = () => {
       message: 'Hello man',
       time: '10:00',
       read: true,
-      profile:
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+      profile: 'https://ui-avatars.com/api/?background=random&name=Jose'
     }
   ])
+  const contacts = useSelector((state) => state.contacts.contactsList)
+  useEffect(() => {
+    setMessages((oldValue) => {
+      return oldValue.map((message, i) => {
+        message.picture = contacts[i + 5].picture
+        message.name = contacts[i + 5].name
+        return message
+      })
+    })
+  }, [contacts])
   return (
     <div className={classes['messages-content']}>
       <MessagesHeader />

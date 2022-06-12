@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import BaseLayout from './layouts/BaseLayout'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import { getContactsData } from './store/contacts'
+import { useDispatch } from 'react-redux'
 import HomePage from './pages/HomePage'
 import WatchPage from './pages/WatchPage'
 import MarketPage from './pages/MarketPage'
@@ -10,6 +12,10 @@ import MenuPage from './pages/MenuPage'
 import ProfilePage from './pages/ProfilePage'
 
 const App = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getContactsData(15))
+  }, [])
   return (
     <Fragment>
       <BaseLayout>

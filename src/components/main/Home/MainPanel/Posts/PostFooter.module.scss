@@ -1,0 +1,39 @@
+@import 'src/sass/index';
+.post-footer {
+  @include flex(column);
+  color: map-get($textColors, 'secondary');
+  padding: 0 1rem;
+  &__resume {
+    @include flex(row, nowrap, initial, center);
+    padding: 0.6rem 0;
+    &__reactions {
+      flex-grow: 1;
+      @include flex(row, nowrap, initial, center);
+      & .reaction {
+        @include grid-center();
+        max-width: 1.2rem;
+        border: 1px solid white;
+      }
+      & span {
+        cursor: pointer;
+        margin-left: 0.5rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__comments {
+      font-size: 0.93rem;
+      @include flex(row, nowrap, initial, center, 0.5rem);
+      & div {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  & .divide {
+    @include divide(0);
+  }
+}

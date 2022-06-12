@@ -23,8 +23,8 @@
     @content;
   }
 }
-@mixin divide() {
-  padding: 0.5rem;
+@mixin divide($padding: 0.5rem) {
+  padding: $padding;
   & div {
     height: 1px;
     width: 100%;

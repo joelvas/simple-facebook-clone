@@ -1,10 +1,12 @@
 import React from 'react'
 import classes from './Stories.module.scss'
 import StoriesList from './Stories/StoriesList'
-const Stories = ({ contactsList }) => {
+import { useSelector } from 'react-redux'
+const Stories = () => {
+  const storiesList = useSelector((state) => state.contacts.storiesList)
   return (
     <div className={classes.stories}>
-      <StoriesList contactsList={contactsList} />
+      <StoriesList storiesList={storiesList} />
     </div>
   )
 }

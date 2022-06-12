@@ -1,0 +1,63 @@
+@import 'src/sass/index';
+.comment-item {
+  @include flex(column);
+  gap: 0.2rem;
+  &__content {
+    @include flex(row, nowrap, initial, stretch, 0.3rem);
+    &__picture {
+      & img {
+        border-radius: 50%;
+      }
+    }
+    &__text {
+      @include flex(column);
+      background-color: map-get($bgColors, 'web-wash');
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      color: map-get($textColors, 'primary');
+      & .name {
+        cursor: pointer;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & .comment {
+        font-size: 0.9375rem;
+      }
+    }
+    &__options {
+      @include flex(row, nowrap, left, center);
+      & span {
+        @include grid-center();
+        cursor: pointer;
+        font-size: 0.7rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        &:hover {
+          background-color: map-get($bgColors, 'grey-light');
+        }
+      }
+    }
+  }
+  &__footer {
+    @include flex(row, nowrap, space-between, center);
+    padding-left: 3.3rem;
+    &__actions {
+      @include flex();
+      cursor: pointer;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      & span:hover {
+        text-decoration: underline;
+      }
+    }
+    &__reactions {
+    }
+  }
+  &__replies {
+  }
+}

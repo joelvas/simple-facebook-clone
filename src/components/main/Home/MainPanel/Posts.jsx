@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import classes from './Posts.module.scss'
+import PostItem from './Posts/PostItem'
 const Posts = () => {
   const [posts, setPosts] = useState([
     {
@@ -24,8 +25,12 @@ const Posts = () => {
       },
       content: {
         text: 'En React, ¿Como desactivarían un botón después de dos clicks?',
-        images: [],
-        link: ''
+        multimedia: [
+          {
+            type: 'image',
+            url: ''
+          }
+        ]
       },
       reactions: {
         like: [
@@ -75,12 +80,13 @@ const Posts = () => {
           id: Math.random().toString(),
           user: {
             id: Math.random().toString(),
-            name: 'Kevin Portillo'
+            name: 'Kevin Portillo',
+            picture: ''
           },
           date: '1654271066266',
           comment: '',
           reactions: {},
-          comments: []
+          replies: []
         }
       ],
       shares: [
@@ -95,6 +101,12 @@ const Posts = () => {
       ]
     }
   ])
-  return <div className={classes.posts}>Post</div>
+  return (
+    <div className={classes.posts}>
+      {posts.map((post) => {
+        return <PostItem key={post.id} post={post} />
+      })}
+    </div>
+  )
 }
 export default Posts

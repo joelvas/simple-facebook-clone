@@ -1,0 +1,5 @@
+@import 'src/sass/index';
+.comments-list {
+  @include flex(column);
+  padding: 0.5rem 0;
+}

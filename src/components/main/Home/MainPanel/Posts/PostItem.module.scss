@@ -1,0 +1,11 @@
+@import 'src/sass/index';
+.post-item {
+  @include card();
+  border-radius: 7px;
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  & .divide{
+    @include divide(0);
+  }
+}

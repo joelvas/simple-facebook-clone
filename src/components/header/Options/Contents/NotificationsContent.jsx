@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from './NotificationsContent.module.scss'
 import NotificationsList from './Notifications/NotificationsList'
 import NotificationsHeader from './Notifications/NotificationsHeader'
+import { useSelector } from 'react-redux'
+let first = true
 const NotificationsContent = () => {
   const [filters, setFilters] = useState([
     {
@@ -65,6 +67,19 @@ const NotificationsContent = () => {
       picture: 'https://via.placeholder.com/150'
     }
   ])
+  const contacts = useSelector((state) => state.contacts.contactsList)
+  useEffect(() => {
+    if (first) {
+      first = false
+      return
+    }
+    setNotifications((oldVal) => {
+      return oldVal.map((not, i) => {
+        not.picture = contacts[i].picture
+        return not
+      })
+    })
+  }, [contacts])
   const clickFilterHandler = (filter) => {
     setFilters((oldVal) => {
       return oldVal.map((f) => {
