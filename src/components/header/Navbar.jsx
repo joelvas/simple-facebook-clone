@@ -32,7 +32,7 @@ const Navbar = () => {
           alt=""
           width={28}
         />
-        <span>Jeyson</span>
+        <span>Joel</span>
       </NavLink>
       <Options />
     </nav>
